@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Плаксин</title>
+</head>
+<body>
+
+    <script>
+        var TEXT = "ABxaxИx njИjnjAB ggiABI2gggI qqABI2 hИИИИИtИИИИИvИИннИ жц2баыв "; 
+        var text1 = Array.from(String(TEXT));
+        
+        var C = 0;
+        var Z = 0;
+        var c = 0;
+        var I = 0;
+        document.write("Начальная строка: ",text1.join(""));
+        document.write("<br>");
+        
+        for (var i = 0; i < text1.length; i++) {
+
+            if (text1[i] == " ") {
+                text1.splice(i, 0,".");
+                i++;
+            }
+        }
+        for (var i = 0; i < text1.length; i++) {
+
+            if (text1[i] == " ") {
+                
+                Z++;
+                if (Z == 4) {
+                    C = i;
+                }
+                else if (Z == 5) {
+                    c = i;
+                }
+            }
+           
+        }
+        for (var i = 0; i < text1.length; i++) {
+
+            if (i > C && i < c) {
+                if (text1[i] == "И") {
+                    I++;
+                }
+            }
+        }
+        
+		document.write("Конечная строка: ",text1.join(""));
+        document.write("<br>");
+		document.write("Кол-во букв (И) в пятом слове: ", I);
+
+
+
+    </script>
+</body>
+</html>

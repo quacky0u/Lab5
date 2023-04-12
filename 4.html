@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Плаксин</title>
+</head>
+<body>
+
+    <script>
+        var text = "огры они как луковицы многослойные слой за слоем";
+        document.write("Изначальная строка: ",text);  
+        document.write("<br>");  
+
+        var mass = text.split(" "); 
+
+        for (var i = 0; i < mass.length; i++) { 
+            var word = mass[i];
+            
+			if (word.length > 3) {
+			
+                var f = word.charAt(0);
+
+                var l = word.charAt(word.length - 1);
+
+                var m = word.substring(1, word.length - 1);
+
+                var p = m.split("").sort(function () { return 0.5 - Math.random() }).join("");
+
+                mass[i] = f + p + l;
+            }
+        }
+        var o = mass.join(" "); 
+        document.write("Конечная строка: ",o);  
+    </script>
+</body>
+</html>
